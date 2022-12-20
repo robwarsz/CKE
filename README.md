@@ -1,5 +1,5 @@
 # CKE
 
-# Matura próbna informatyka 2022 grudzień (poziom rozszerzony) PY
+# Matura próbna informatyka 2022 grudzień (PR) PY
 
-# Matura próbna informatyka 2022 grudzień (poziom rozszerzony) C++
+# Matura próbna informatyka 2022 grudzień (PR) C++
