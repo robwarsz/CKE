@@ -62,7 +62,7 @@ def part3():
     # return [maxA,maxB,A10,B10]
     return f'\nOdp3: Najdłuższa passa: {"A" if maxA > maxB else "B"}, długość passy: {max(maxA,maxB)}, Ilośc dobrych pass: {A10+B10}'
 
-with open ("wynikiRW.txt","w",encoding='utf-8') as file:
+with open ("wynikiRW-PY.txt","w",encoding='utf-8') as file:
     file.write(part1())
     file.write(part2())
     file.write(part3())
