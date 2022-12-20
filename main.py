@@ -4,10 +4,12 @@
 # print(points)
 
 points=[]
+# with open("mecz_przyklad.txt", "r") as file:
 with open("mecz.txt", "r") as file:
     for line in file:
         for char in line:
             points.append((char))
+    # points.pop()
 # print(points)
 # print(len(points))
 
@@ -31,11 +33,7 @@ def part2():
         else:
             scoreB += 1
         if scoreA >= 1000 and abs(scoreA-scoreB)>2 or scoreB >= 1000 and abs(scoreA-scoreB)>2:
-            if scoreA > scoreB:
-                winner = 'A'
-            else:
-                winner = 'B'
-            return f'Odp2: Zwycięzca: {winner}, Wynik: {scoreA}:{scoreB}'
+            return f'Odp2: Zwycięzca: {"A" if scoreA > scoreB else "B"}, Wynik: {scoreA}:{scoreB}'
 
 def part3():
     scoreA=[0]*10000
