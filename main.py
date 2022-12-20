@@ -4,11 +4,12 @@
 # print(points)
 
 points=[]
-with open("mecz_przyklad.txt", "r") as file:
+with open("mecz.txt", "r") as file:
     for line in file:
         for char in line:
             points.append((char))
 # print(points)
+# print(len(points))
 
 def part1():
     global points
@@ -18,6 +19,51 @@ def part1():
         if point != last:
             last = point
             result += 1
-    return result
+    return f'Odp1: {result}'
+
+def part2():
+    scoreA=0
+    scoreB=0
+    global points
+    for point in points:
+        if point == 'A':
+            scoreA += 1
+        else:
+            scoreB += 1
+        if scoreA >= 1000 and abs(scoreA-scoreB)>2 or scoreB >= 1000 and abs(scoreA-scoreB)>2:
+            if scoreA > scoreB:
+                winner = 'A'
+            else:
+                winner = 'B'
+            return f'Odp2: Zwycięzca: {winner}, Wynik: {scoreA}:{scoreB}'
+
+def part3():
+    scoreA=[0]*10000
+    scoreB=[0]*10000
+    A10=0
+    B10=0
+    global points
+    if points[0] == 'A':
+        scoreA[0] = 1
+    else:
+        scoreB[0] = 1
+    for el in range(1,10000):
+        if points[el]=='A':
+            scoreA[el] = scoreA[el-1]+1
+            scoreB[el] = 0
+        else:
+            scoreB[el] = scoreB[el-1]+1
+            scoreA[el] = 0
+        if scoreA[el] == 10:
+            A10 += 1
+        if scoreB[el] == 10:
+            B10 += 1
+    maxA=max(scoreA)
+    maxB=max(scoreB)
+    # return [maxA,maxB,A10,B10]
+    return f'Odp3: Najdłuższa passa: {"A" if maxA > maxB else "B"}, długość passy: {max(maxA,maxB)}, Ilośc dobrych pass: {A10+B10}'
 
 print(f'{part1()}')
+print(f'{part2()}')
+print(f'{part3()}')
+
