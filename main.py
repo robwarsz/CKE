@@ -1,4 +1,4 @@
-''' 21:59 '''
+''' 22:20 '''
 
 # f = open("mecz_przyklad.txt", "r")
 # points=f.read()
@@ -11,7 +11,6 @@ with open("mecz.txt", "r") as file:
     for line in file:
         for char in line:
             points.append((char))
-    # points.pop()
 # print(points)
 # print(len(points))
 
@@ -35,7 +34,7 @@ def part2():
         else:
             scoreB += 1
         if scoreA >= 1000 and abs(scoreA-scoreB)>2 or scoreB >= 1000 and abs(scoreA-scoreB)>2:
-            return f'Odp2: Zwycięzca: {"A" if scoreA > scoreB else "B"}, Wynik: {scoreA}:{scoreB}'
+            return f'\nOdp2: Zwycięzca: {"A" if scoreA > scoreB else "B"}, Wynik: {scoreA}:{scoreB}'
 
 def part3():
     scoreA=[0]*10000
@@ -61,9 +60,16 @@ def part3():
     maxA=max(scoreA)
     maxB=max(scoreB)
     # return [maxA,maxB,A10,B10]
-    return f'Odp3: Najdłuższa passa: {"A" if maxA > maxB else "B"}, długość passy: {max(maxA,maxB)}, Ilośc dobrych pass: {A10+B10}'
+    return f'\nOdp3: Najdłuższa passa: {"A" if maxA > maxB else "B"}, długość passy: {max(maxA,maxB)}, Ilośc dobrych pass: {A10+B10}'
 
-print(f'{part1()}')
-print(f'{part2()}')
-print(f'{part3()}')
+with open ("wynikiRW.txt","w",encoding='utf-8') as file:
+    file.write(part1())
+    file.write(part2())
+    file.write(part3())
+file.close()
+
+
+print(part1())
+print(part2())
+print(part3())
 
