@@ -1,3 +1,5 @@
+''' 21:59 '''
+
 # f = open("mecz_przyklad.txt", "r")
 # points=f.read()
 # # print(type(points))
