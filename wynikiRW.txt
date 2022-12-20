@@ -1,3 +1,0 @@
-Odp1: 5030
-Odp2: Zwycięzca: B, Wynik: 1001:1004
-Odp3: Najdłuższa passa: B, długość passy: 15, Ilośc dobrych pass: 6

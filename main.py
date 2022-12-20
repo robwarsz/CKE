@@ -11,6 +11,7 @@ with open("mecz.txt", "r") as file:
     for line in file:
         for char in line:
             points.append((char))
+file.close()
 # print(points)
 # print(len(points))
 
