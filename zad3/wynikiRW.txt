@@ -1,0 +1,4 @@
+Odp 3.2: 21
+Odp 3.3
+max: Liczba: 910620, ilość: 9932
+min: Liczba: 18676, ilość: 195
