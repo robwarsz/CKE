@@ -20,7 +20,12 @@ def check(pair):
         return True
     return False
 
-
-for el in numbers:
-    if check(el):
-        print(*el)
+with open ("wyniki2.txt",'w',encoding='utf8') as file:
+    for el in numbers:
+        if check(el):
+            print(*el)
+            file.write(str(el[0]))
+            file.write('\t')
+            file.write(str(el[1]))
+            file.write('\n')
+file.close()
