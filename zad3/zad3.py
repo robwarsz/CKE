@@ -56,10 +56,29 @@ print(f'max: Liczba: {wyniki[len(wyniki)-1][1]}, ilość: {wyniki[len(wyniki)-1]
 print(f'min: Liczba: {wyniki[0][1]}, ilość: {wyniki[0][0]}')
 
 
+
+
+# zad3.4
+hex='0123456789abcdef'
+hexCount = {}
+for el in hex:
+    hexCount[el]=0
+# print(hexCount)
+
+for el in numbers:
+    # print(el)
+    while el>0:
+        hexCount[hex[el%16]]+=1
+        el//=16
+print(hexCount)
+
 with open ("wynikiRW.txt",'w',encoding='utf8') as file:
     file.write(f'Odp 3.2: {odp1}')
     file.write('\nOdp 3.3')
     file.write(f'\nmax: Liczba: {wyniki[len(wyniki)-1][1]}, ilość: {wyniki[len(wyniki)-1][0]}')
     file.write(f'\nmin: Liczba: {wyniki[0][1]}, ilość: {wyniki[0][0]}')
+    file.write(f'\nOdp 3.4: \n{hexCount}')
+file.close()
+
 file.close()
 
